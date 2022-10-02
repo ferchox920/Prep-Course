@@ -74,18 +74,36 @@ function capicua(numero) {
   //La misma debe retornar: "Es capicua" si el número se número que se lee igual de
   //izquierda a derecha que de derecha a izquierda. Caso contrario retorna "No es capicua"
   //Escribe tu código aquí
+
+  e = numero;
+  a = e.toString();
+  i = a.split("");
+  o = i.reverse();
+  u = o.join("");
+
+  if (numero == u) {
+    return "Es capicua";
+  } else {
+    return "No es capicua";
+  }
 }
 
 function deleteAbc(cadena) {
   //Define una función que elimine las letras "a", "b" y "c" de la cadena dada
   //y devuelva la versión modificada o la misma cadena, en caso de contener dichas letras.
   //Escribe tu código aquí
+  res= cadena.replace('a','').replace('b','').replace('c','');
+  return res;
 }
 
 function sortArray(arr) {
   //La función recibe una matriz de strings. Ordena la matriz en orden creciente de longitudes de cadena
   //Ej: Recibe ---> ["You", "are", "beautiful", "looking"] || Devuelve ---> [“You", "are", "looking", "beautiful"]
   //Escribe tu código aquí
+
+  var sortedArr = arr.sort((a, b) => a.length - b.length);
+
+  return sortedArr;
 }
 
 function buscoInterseccion(arreglo1, arreglo2) {
@@ -94,6 +112,9 @@ function buscoInterseccion(arreglo1, arreglo2) {
   //Si no tienen elementos en común, retornar un arreglo vacío.
   //Aclaración: los arreglos no necesariamente tienen la misma longitud
   //Escribe tu código aquí
+  var common = arreglo1.filter(x => arreglo2.indexOf(x) !== -1)
+
+  return common;
 }
 
 // No modificar nada debajo de esta línea
